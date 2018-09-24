@@ -1,0 +1,33 @@
+/* Layout */
+$couleurTexte: #404A57;
+$couleurBase: #40BABD;
+$couleurAlt: #4192dd;
+$couleurAccent: #F04A39;
+$gris1: lighten($couleurTexte, 69%);//#F9FBFB;
+$gris2: lighten($couleurTexte, 64%);//#ECEEEE;
+$gris3: lighten($couleurTexte, 59%);//#D3D4D4;
+$gris4: lighten($couleurTexte, 42%);//#ADAEAE;
+$gris5: lighten($couleurTexte, 20%);//#6E6E6E;
+$couleurCard: #fff;
+$couleurFond: #eaeaea;
+$couleurCard: #fff;
+$couleurTexteBase: darken($couleurBase, 10%);
+$couleurTexteAccent: darken($couleurAccent, 10%);
+$couleurTexteBouton: #fff;
+$couleurTitreQuestion: $gris3;
+$couleurTexteTitreQuestion: $couleurTexte;
+$couleurBordureQuestion: darken($gris3, 8%);
+$couleurBordureTitreQuestion: $gris2;
+$couleurFondQuestion: $gris1;
+$couleurTexteIndice: $couleurTexte;
+$couleurFondIndice: $gris2;
+
+
+
+@import url(../../lib/style/normalize.css);
+
+@import 'capcode-base.scss';
+@import 'capcode-fonts.scss';
+@import 'capcode-generic.scss';
+@import 'capcode-layout.scss';
+@import url(../../core/style/capcode-syntax.css);

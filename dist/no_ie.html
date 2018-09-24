@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+    <title>Test</title>
+    <style type="text/css">
+        @font-face {
+            font-family: "Open Sans";
+            src: url("fonts/OpenSans-Regular.woff");
+            font-weight: 400;
+        }
+
+        body {
+            padding: 4em;
+            color: #444;
+            font-family: 'Open Sans';
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        .dactylo {
+            font-size: 30px;
+        }
+
+        .curseur {
+            border-right: 2px solid rgba(255, 255, 255, .75);
+            animation: curseur-clignotant 1200ms infinite normal;
+        }
+
+        div *:first-child {
+            color: #40BABD;
+        }
+
+        @keyframes curseur-clignotant {
+            0% {
+                border-right-color: #339597;
+            }
+            40% {
+                border-right-color: #339597;
+            }
+            60% {
+                border-right-color: transparent;
+            }
+            100% {
+                border-right-color: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="message" class="dactylo">
+        Flute !<br /> Ce navigateur ne permet pas de profiter de cette leçon...<br /> Essayez avec un navigateur Firefox récent par exemple.<br /> :(
+    </div>
+
+
+</body>
+
+<script type="text/javascript">
+    var destination = document.getElementById("message");
+    var texte = destination.innerText.split('\n');
+    var posLigne = 0;
+    var longueurTexte = texte[0].length;
+    var position = 0;
+
+    function dactylo() {
+        var texteAffiche = '',
+            ligne = Math.min(0, posLigne),
+            destination = document.getElementById("message");
+
+        while (ligne < posLigne) {
+            texteAffiche += '<p>' + texte[ligne++] + '</p>';
+        }
+        destination.innerHTML = texteAffiche + texte[posLigne].substring(0, position) + "<i class='curseur'></i>";
+        if (position++ == longueurTexte) {
+            position = 0;
+            posLigne++;
+            if (posLigne != texte.length) {
+                longueurTexte = texte[posLigne].length;
+                setTimeout("dactylo()", (100 * (Math.random() + 0.5)));
+            }
+        } else {
+            setTimeout("dactylo()", (100 * (Math.random() + 0.5)));
+        }
+    }
+
+    dactylo();
+</script>
+
+</html>

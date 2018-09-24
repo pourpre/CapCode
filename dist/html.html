@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>HTML Academy</title>
+
+    <link href="lib/style/codemirror.css" rel="stylesheet">
+    <link href="lib/style/prism.css" rel="stylesheet">
+    <link href="lib/style/perfect-scrollbar.css" rel="stylesheet">
+    <link href="style/capcode-core.css" rel="stylesheet">
+    <link href="style/capcode-html.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="zone-edition">
+        <div class="zone-saisie-html card">
+            <textarea id="editeur-html" autocomplete="off"></textarea>
+        </div>
+        <div class="zone-saisie-css card">
+            <textarea id="editeur-css" autocomplete="off"></textarea>
+        </div>
+    </div>
+    <div class="zone-actions zone-actions--html">
+        <button id="bouton-go" class="btn btn--primary btn--text" title="Actualiser (Ctrl+Entrée)">Go !</button>
+    </div>
+</body>
+<script src="lib/js/showdown.min.js" charset="utf-8"></script>
+<script src="lib/js/prism.min.js" charset="utf-8"></script>
+<script src="lib/js/codemirror/lib/codemirror.js" charset="utf-8"></script>
+<script src="lib/js/codemirror/mode/css/css.js" charset="utf-8"></script>
+<script src="lib/js/codemirror/mode/xml/xml.js" charset="utf-8"></script>
+<script src="lib/js/alertify.js" charset="utf-8"></script>
+<script src="lib/js/perfect-scrollbar.min.js" charset="utf-8"></script>
+<script src="js/capcode-core.min.js" charset="utf-8"></script>
+<script src="js/capcode-html.min.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+    capcode.core.lancerDiaporama({
+        source: ['html'],
+        path: 'md/',
+        cookie: 'html'
+    });
+</script>
+
+</html>

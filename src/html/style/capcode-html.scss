@@ -1,0 +1,64 @@
+@import '../../core/style/capcode-theme-base.scss';
+
+.colonne-diaporama {
+    transition: flex-basis 0.75s ease-in-out, margin-left 0.75s ease-in-out;
+    margin-left: 0;
+}
+
+.colonne-pratique {
+
+    & > :not(:first-child) {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+    }
+}
+
+.zone-pratique {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.zone-edition,
+.zone-resultat,
+.zone-saisie-html,
+.zone-saisie-css {
+    box-sizing: border-box;
+}
+
+.zone-edition {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.zone-saisie-html,
+.zone-saisie-css {
+    flex: 1;
+}
+
+.zone-saisie-html {
+    margin-right: 10px;
+}
+
+.zone-actions--html {
+    .btn--text {
+        width: 200px;
+    }
+}
+
+.saisie-masquee {
+    .colonne-diaporama {
+        flex-basis: 50%;
+        margin-left: 25%;
+    }
+
+    .colonne-pratique > :not(:first-child) {
+        opacity: 0;
+
+        .btn {
+            height: 0;
+        }
+    }
+}

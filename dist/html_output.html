@@ -1,0 +1,18 @@
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <style type="text/css"></style>
+</head>
+
+<body id="body">
+
+</body>
+
+<script>
+    // Avertissement que la page est chargée et prète à accueillir
+    // le HTML et le CSS
+    const outputReadyEvent = new CustomEvent('outputReady', {});
+    window.opener.dispatchEvent(outputReadyEvent);
+</script>
+</html>

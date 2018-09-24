@@ -1,0 +1,123 @@
+$borderRadius: 2px;
+$boxShadow: 2px 2px 4px rgba(#000, 0.1);
+$insetBoxShadow: inset 1px 1px 1px rgba(#000, 0.1);
+$fontSize: 16px;
+$fontSizeCode: .875 * $fontSize;
+$monospace: "Monaco", monospace;
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: $couleurTexte;
+    font-size: $fontSize;
+}
+
+/* TITRES --------------------------------------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-weight: 300;
+}
+
+h1 {
+    margin-top: 1rem;
+    margin-bottom: 1.25em;
+    font-size: 2.5rem;
+    color: $couleurTexteBase;
+}
+
+h2 {
+    margin-top: 1rem;
+    margin-bottom: 1.25em;
+    font-size: 2rem;
+    color: $couleurTexteBase;
+}
+
+h3 {
+    margin-top: 1.5em;
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    margin-left: 1.5em;
+}
+
+h5 {
+    font-size: 1.3rem;
+    margin-left: 3em;
+}
+
+h6 {
+    font-size: 1.3rem;
+    margin-left: 4.5em;
+}
+
+/* INLINE --------------------------------------------------------------------------------------- */
+
+p {
+    line-height: 1.4em;
+    margin: 0.5rem 1rem;
+}
+
+a {
+    color: $couleurTexteBase;
+}
+
+blockquote {
+    border-left: 3px solid #ddd;
+    margin-left: 1em;
+    padding-left: 1em;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tbody tr:nth-child(even) {
+    background-color: $gris1;
+}
+
+td,
+th {
+    padding: 0.4em 0.8em;
+    border: 1px solid $gris2;
+}
+
+th {
+    border-bottom: 2px solid $gris3;
+}
+
+ul > li {
+    list-style-type: square;
+}
+
+hr {
+    margin: 2em 0;
+    border: none;
+    border-bottom: 1px solid $gris4;
+}
+
+code,
+pre {
+    font-family: Consolas, Monaco, "Ubuntu Mono", monospace;
+
+    &[class*="language-"],
+    &[class*="language-"] {
+        font-size: $fontSizeCode;
+    }
+}
+
+:not(pre) > code {
+    font-family: $monospace;
+    font-size: $fontSizeCode;
+    padding: 0 2px;
+    border-radius: $borderRadius;
+    background-color: $gris2;
+    border: 1px solid $gris3;
+    color: $gris5;
+}

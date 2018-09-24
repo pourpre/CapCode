@@ -1,0 +1,149 @@
+.absent {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.fade-in {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    transition: opacity .2s linear;
+    z-index: 2;
+}
+
+.fade-out {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    height: 0;
+    z-index: 1;
+    transition: opacity .2s linear;
+    transition: height 0 .2s linear;
+}
+
+.inside,
+.outside {
+    position: absolute;
+    top: 0;
+    transition: transform 0.3s ease;
+}
+
+.inside--left {
+    left: 0;
+    transform: translateX(0);
+}
+
+.outside--left {
+    left: 0;
+    transform: translateX(-110%);
+}
+
+.inside--right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.outside--right {
+    right: 0;
+    transform: translateX(110%);
+}
+.cliquable {
+    cursor: pointer;
+}
+.card {
+    background-color: $couleurCard;
+    border: 1px solid $gris3;
+    border-radius: $borderRadius;
+}
+
+.btn {
+    display: inline-block;
+    height: 2em;
+    line-height: 0;
+    padding: 0 8px;
+    border-radius: $borderRadius;
+    cursor: pointer;
+    box-sizing: border-box;
+    vertical-align: middle;
+
+    &.btn--default-light {
+        border: 1px solid transparent;
+        background-color: transparent;
+        color: $couleurTexte;
+
+        &:hover {
+            background-color: $couleurCard;
+            border: 1px solid $gris3;
+        }
+
+        &[disabled] {
+            color: $gris3;
+        }
+    }
+
+    &.btn--primary {
+        border: none;
+        background-color: $couleurBase;
+        color: $couleurTexteBouton;
+
+        &[disabled] {
+            opacity: 0.5;
+            cursor: auto;
+        }
+    }
+
+    &.btn--primary-light {
+        border: 1px solid $couleurBase;
+        background-color: #fff;
+        color: $couleurBase;
+
+        &:hover {
+            background-color: $couleurBase;
+            color: #fff;
+        }
+
+        &[disabled] {
+            cursor: auto;
+            border-color: lighten($couleurTexte, 60%);
+            background-color: #fff;
+            color: lighten($couleurTexte, 50%);
+        }
+    }
+
+    &.btn--text {
+        min-width: 6em;
+    }
+
+    i {
+        line-height: 30px;
+    }
+}
+
+.success {
+    color: $couleurTexteBase;
+}
+
+.pulse {
+    box-shadow: 0 0 0 rgba($couleurBase, .6);
+    animation: pulse 1.5s;
+}
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba($couleurBase, 0.8);
+    }
+
+    70% {
+        box-shadow: 0 0 2em 1em rgba($couleurBase, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba($couleurBase, 0);
+    }
+}

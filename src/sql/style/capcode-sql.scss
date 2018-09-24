@@ -1,0 +1,136 @@
+@import '../../core/style/capcode-theme-base.scss';
+
+.colonne-diaporama {
+    transition: flex-basis 0.75s ease-in-out, margin-left 0.75s ease-in-out;
+    margin-left: 0;
+}
+
+.colonne-pratique {
+
+    & > :not(:first-child) {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+    }
+}
+
+.zone-pratique {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.zone-edition,
+.zone-resultat,
+.zone-saisie,
+.zone-tables {
+    box-sizing: border-box;
+}
+
+.zone-edition {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.zone-tables {
+    flex-basis: 240px;
+    margin-right: 10px;
+    padding: 0.5em 1em;
+    position: relative;
+
+    p {
+        margin: 0;
+    }
+
+    & > ul {
+        margin-block-start: 0;
+        padding-left: 0;
+
+        li {
+            list-style-type: none;
+        }
+
+        & > li {
+            font-weight: 700;
+            cursor: pointer;
+
+            &:before {
+                content: 'expand_less';
+                font-family: 'material icons';
+                margin-right: 0.25em;
+                vertical-align: bottom;
+                font-weight: 400;
+                color: lighten($couleurTexte, 40%);
+            }
+
+            &.compact {
+                font-weight: 400;
+
+                &:before {
+                    content: 'expand_more';
+                    font-family: 'material icons';
+                    color: lighten($couleurTexte, 40%);
+                }
+
+                ul {
+                    display: none;
+                }
+            }
+
+            ul {
+                padding-left: 2em;
+                margin-bottom: 0.5em;
+                font-weight: 400;
+                cursor: auto;
+            }
+        }
+    }
+
+    .type {
+        color: lighten($couleurTexte, 40%);
+        font-size: 0.8em;
+        font-style: italic;
+        padding-left: 0.5em;
+    }
+}
+
+.zone-saisie {
+    flex: 1;
+}
+
+.zone-resultat {
+    flex: 2;
+    overflow: auto;
+    position: relative;
+
+    .erreur {
+        margin-left: 1em;
+        color: $couleurAccent;
+    }
+}
+
+.zone-actions--sql {
+    .btn--text {
+        width: 200px;
+    }
+
+    .nb-resultats {
+        margin-right: 2em;
+    }
+}
+
+.saisie-masquee {
+    .colonne-diaporama {
+        flex-basis: 50%;
+        margin-left: 25%;
+    }
+
+    .colonne-pratique > :not(:first-child) {
+        opacity: 0;
+
+        .btn {
+            height: 0;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>SQL Academy</title>
+
+    <link href="lib/style/codemirror.css" rel="stylesheet">
+    <link href="lib/style/prism.css" rel="stylesheet">
+    <link href="lib/style/perfect-scrollbar.css" rel="stylesheet">
+    <link href="style/capcode-core.css" rel="stylesheet">
+    <link href="style/capcode-sql.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="zone-edition">
+        <div id="zone-tables" class="zone-tables card">
+            <p>Tables</p>
+        </div>
+        <div class="zone-saisie card">
+            <textarea id="editeur" autocomplete="off"></textarea>
+        </div>
+    </div>
+    <div class="zone-actions zone-actions--sql">
+        <span id="nb-resultats" class="nb-resultats"></span>
+        <button id="bouton-go" class="btn btn--primary btn--text" title="Lancer la requête (Ctrl+Entrée)">Go !</button>
+    </div>
+    <div id="zone-resultat" class="zone-resultat card"></div>
+</body>
+<script src="lib/js/showdown.min.js" charset="utf-8"></script>
+<script src="lib/js/prism.min.js" charset="utf-8"></script>
+<script src="lib/js/codemirror/lib/codemirror.js" charset="utf-8"></script>
+<script src="lib/js/codemirror/mode/sql/sql.js" charset="utf-8"></script>
+<script src="lib/js/sql.js" charset="utf-8"></script>
+<script src="lib/js/alertify.js" charset="utf-8"></script>
+<script src="lib/js/perfect-scrollbar.min.js" charset="utf-8"></script>
+<script src="js/capcode-core.min.js" charset="utf-8"></script>
+<script src="js/capcode-sql.min.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+    capcode.core.lancerDiaporama({
+        source: ['sql'],
+        path: 'md/',
+        cookie: 'sql'
+    });
+</script>
+
+</html>
